@@ -19,7 +19,7 @@ compose-ui = "1.5.4"
 #### App testing dependencies versions
 junit = "4.13.2"
 junitVersion = "1.2.1"
-espressoCore = "3.6.1"
+espressoCore = "3.5.0"
 uiTestAndroid = "1.7.8"
 hamcrest = "2.2"
 mockk = "1.13.9"
