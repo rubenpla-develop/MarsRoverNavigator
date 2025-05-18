@@ -24,6 +24,9 @@ jobs:
       - name: Set up Gradle cache
         uses: gradle/actions/setup-gradle@v3
 
+      - name: Debug Dependency Resolution
+        run: ./gradlew :app:dependencies --configuration debugAndroidTestRuntimeClasspath
+
       - name: Make gradlew executable
         run: chmod +x ./gradlew
 
