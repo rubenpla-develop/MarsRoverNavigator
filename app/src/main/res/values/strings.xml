@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Mars Rover Navigator</string>
+
+    <string name="home_app_bar_test_tag" translatable="false">HomeAppBar</string>
+    <string name="home_app_bar_json_data_test_tag" translatable="false">HomeAppBarJsonData</string>
+    <string name="loader_test_tag" translatable="false">LoadingItem</string>
 </resources>
