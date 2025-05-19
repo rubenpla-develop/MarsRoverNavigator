@@ -99,6 +99,9 @@ dependencies {
     implementation(libs.androidx.annotation) // Para soporte de anotaciones
     implementation(libs.androidx.ui.test.android) // Soporte KTX (incluye MasterKey)
     kapt(libs.hilt.compiler)
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
+    implementation(libs.navigation.compose)
 
     testImplementation(libs.junit)
     testImplementation(libs.hamcrest)
