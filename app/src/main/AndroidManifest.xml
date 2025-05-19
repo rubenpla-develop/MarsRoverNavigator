@@ -14,7 +14,7 @@
         android:theme="@style/Theme.App.Starting"
         tools:targetApi="31">
         <activity
-            android:name="com.rpla.marsrovernavigator.MainActivity"
+            android:name="com.rpla.marsrovernavigator.ui.activity.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.App.Starting">
