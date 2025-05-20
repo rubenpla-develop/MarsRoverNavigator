@@ -33,6 +33,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.rpla.marsrovernavigator.R
+import com.rpla.marsrovernavigator.navigator.data.model.Coordinates
+import com.rpla.marsrovernavigator.navigator.data.model.NavigationDirection
+import com.rpla.marsrovernavigator.navigator.data.model.NavigatorConfig
+import com.rpla.marsrovernavigator.navigator.data.model.NavigatorCurrentState
 import com.rpla.marsrovernavigator.navigator.viewmodel.NavigatorIntent
 import com.rpla.marsrovernavigator.navigator.viewmodel.NavigatorViewModel
 import com.rpla.marsrovernavigator.ui.theme.MarsRoverNavigatorTheme
@@ -116,7 +120,14 @@ fun NavigatorController(
 
                 IconButton(
                     onClick = {
-                        // Call view model to process commands
+                        val dataConfig =
+                            NavigatorConfig(
+                                topRightCorner = Coordinates(currentState.gridSize, currentState.gridSize),
+                                roverPosition = Coordinates(currentState.x, currentState.y),
+                                roverNavigationDirection = currentState.navigationDirection,
+                                commands,
+                            )
+                        viewModel.dispatchIntent(NavigatorIntent.ProcessCommands(coordinatesData = dataConfig))
                         Log.i("Commands", "Commands: $commands")
                     },
                     modifier = Modifier.testTag(stringResource(R.string.command_palette_process_commands_test_tag)),
@@ -158,6 +169,12 @@ fun CommandControllerPreview() {
         NavigatorController(
             Modifier,
             hiltViewModel(),
+            NavigatorCurrentState(
+                x = 1,
+                y = 2,
+                gridSize = 5,
+                navigationDirection = NavigationDirection.W,
+            ),
         )
     }
 }

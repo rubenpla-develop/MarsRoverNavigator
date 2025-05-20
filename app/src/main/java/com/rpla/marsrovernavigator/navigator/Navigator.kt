@@ -9,7 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.rpla.marsrovernavigator.R
-import com.rpla.marsrovernavigator.gridnavigator.ui.grid.GridNavigatorUI
+import com.rpla.marsrovernavigator.navigator.ui.grid.NavigatorUI
 import com.rpla.marsrovernavigator.ui.common.HomeAppBar
 import com.rpla.marsrovernavigator.ui.theme.MarsRoverNavigatorTheme
 
@@ -26,7 +26,7 @@ fun RoverNavigator() {
             )
         },
         content = { innerPadding ->
-            GridNavigatorUI(innerPaddings = innerPadding)
+            NavigatorUI(innerPaddings = innerPadding)
         },
     )
 }

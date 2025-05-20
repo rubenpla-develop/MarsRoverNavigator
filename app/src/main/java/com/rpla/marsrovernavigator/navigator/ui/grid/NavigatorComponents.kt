@@ -31,6 +31,7 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
 import com.rpla.marsrovernavigator.R
+import com.rpla.marsrovernavigator.navigator.data.model.NavigatorCurrentState
 import com.rpla.marsrovernavigator.navigator.ui.commandcontroller.NavigatorController
 import com.rpla.marsrovernavigator.navigator.viewmodel.NavigatorViewModel
 import com.rpla.marsrovernavigator.ui.theme.Black
@@ -39,11 +40,10 @@ import com.rpla.marsrovernavigator.ui.theme.Black
 fun NavigatorComponents(
     modifier: Modifier,
     innerPaddings: PaddingValues,
-    roverPosition: State<Pair<Int, Int>>,
+    currentGridState: NavigatorCurrentState,
     viewModel: NavigatorViewModel,
 ) {
-    val gridSize = rememberSaveable { 5 }
-    val totalCells = rememberSaveable { gridSize * gridSize }
+    val totalCells = rememberSaveable { currentGridState.gridSize * currentGridState.gridSize }
 
     ConstraintLayout(
         modifier = modifier.fillMaxSize(),
@@ -63,8 +63,8 @@ fun NavigatorComponents(
                     },
         ) {
             items(totalCells) { index ->
-                val x = index % gridSize
-                val y = gridSize - 1 - index / gridSize // Y invertido para tener (0,0) abajo
+                val x = index % currentGridState.gridSize
+                val y = currentGridState.gridSize - 1 - index / currentGridState.gridSize
 
                 Box(
                     modifier =
@@ -72,14 +72,14 @@ fun NavigatorComponents(
                             .aspectRatio(1f)
                             .border(1.dp, Color.Gray)
                             .background(
-                                if (x == roverPosition.value.first && y == roverPosition.value.second) {
+                                if (x == currentGridState.x && y == currentGridState.y) {
                                     Color.Red
                                 } else {
                                     Color.White
                                 },
                             ),
                 ) {
-                    if (x == roverPosition.value.first && y == roverPosition.value.second) {
+                    if (x == currentGridState.x && y == currentGridState.y) {
                         Image(
                             modifier =
                                 Modifier
@@ -120,6 +120,7 @@ fun NavigatorComponents(
                         start.linkTo(parent.start)
                         end.linkTo(parent.end)
                     },
+            currentState = currentGridState,
             viewModel = viewModel,
         )
     }
