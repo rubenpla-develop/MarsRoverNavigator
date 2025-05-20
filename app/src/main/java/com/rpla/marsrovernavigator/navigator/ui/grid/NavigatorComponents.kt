@@ -1,6 +1,6 @@
 @file:Suppress("ktlint:standard:function-naming")
 
-package com.rpla.marsrovernavigator.gridnavigator.ui.grid
+package com.rpla.marsrovernavigator.navigator.ui.grid
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -13,12 +13,12 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.foundation.lazy.grid.GridCells.Fixed
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Landscape
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.State
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -31,16 +31,16 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
 import com.rpla.marsrovernavigator.R
-import com.rpla.marsrovernavigator.gridnavigator.ui.commandcontroller.CommandsController
-import com.rpla.marsrovernavigator.gridnavigator.viewmodel.RoverNavigatorViewModel
+import com.rpla.marsrovernavigator.navigator.ui.commandcontroller.NavigatorController
+import com.rpla.marsrovernavigator.navigator.viewmodel.NavigatorViewModel
 import com.rpla.marsrovernavigator.ui.theme.Black
 
 @Composable
-fun GridDisplay(
+fun NavigatorComponents(
     modifier: Modifier,
     innerPaddings: PaddingValues,
     roverPosition: State<Pair<Int, Int>>,
-    viewModel: RoverNavigatorViewModel,
+    viewModel: NavigatorViewModel,
 ) {
     val gridSize = rememberSaveable { 5 }
     val totalCells = rememberSaveable { gridSize * gridSize }
@@ -51,7 +51,7 @@ fun GridDisplay(
         val (grid, commandsController) = createRefs()
 
         LazyVerticalGrid(
-            columns = androidx.compose.foundation.lazy.grid.GridCells.Fixed(gridSize),
+            columns = Fixed(currentGridState.gridSize),
             modifier =
                 modifier
                     .wrapContentSize()
@@ -110,7 +110,7 @@ fun GridDisplay(
             }
         }
 
-        CommandsController(
+        NavigatorController(
             modifier =
                 modifier
                     .wrapContentSize()

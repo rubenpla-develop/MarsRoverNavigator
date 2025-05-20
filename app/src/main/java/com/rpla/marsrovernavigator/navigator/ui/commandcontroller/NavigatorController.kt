@@ -1,6 +1,6 @@
 @file:Suppress("ktlint:standard:function-naming")
 
-package com.rpla.marsrovernavigator.gridnavigator.ui.commandcontroller
+package com.rpla.marsrovernavigator.navigator.ui.commandcontroller
 
 import android.util.Log
 import androidx.compose.foundation.background
@@ -33,14 +33,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.rpla.marsrovernavigator.R
-import com.rpla.marsrovernavigator.gridnavigator.viewmodel.RoverNavigatorViewModel
+import com.rpla.marsrovernavigator.navigator.viewmodel.NavigatorIntent
+import com.rpla.marsrovernavigator.navigator.viewmodel.NavigatorViewModel
 import com.rpla.marsrovernavigator.ui.theme.MarsRoverNavigatorTheme
 import com.rpla.marsrovernavigator.ui.theme.White
 
 @Composable
-fun CommandsController(
+fun NavigatorController(
     modifier: Modifier,
-    viewModel: RoverNavigatorViewModel,
+    viewModel: NavigatorViewModel,
+    currentState: NavigatorCurrentState,
 ) {
     var commands by rememberSaveable { mutableStateOf("") }
     Column(
@@ -153,7 +155,7 @@ fun CommandsController(
 @Composable
 fun CommandControllerPreview() {
     MarsRoverNavigatorTheme {
-        CommandsController(
+        NavigatorController(
             Modifier,
             hiltViewModel(),
         )

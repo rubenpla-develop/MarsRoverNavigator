@@ -1,6 +1,6 @@
 @file:Suppress("ktlint:standard:function-naming")
 
-package com.rpla.marsrovernavigator.gridnavigator
+package com.rpla.marsrovernavigator.navigator
 
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
