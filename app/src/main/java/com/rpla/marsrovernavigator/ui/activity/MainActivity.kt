@@ -6,20 +6,18 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.rpla.marsrovernavigator.gridnavigator.ui.grid.MarsGrid
+import com.rpla.marsrovernavigator.gridnavigator.RoverNavigator
 import com.rpla.marsrovernavigator.ui.navigation.LAST_DATA_INPUT_PARAM_NAME
 import com.rpla.marsrovernavigator.ui.navigation.Routes
 import com.rpla.marsrovernavigator.ui.theme.MarsRoverNavigatorTheme
@@ -43,7 +41,7 @@ class MainActivity : ComponentActivity() {
                         startDestination = Routes.RoverNavigation.route,
                     ) {
                         composable(Routes.RoverNavigation.route) {
-                            // TODO RoverNavigation composable
+                            RoverNavigator()
                         }
 
                         composable(
@@ -66,8 +64,8 @@ class MainActivity : ComponentActivity() {
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun RoverNavigatorPreview() {
     MarsRoverNavigatorTheme {
-        MarsGrid(PaddingValues(16.dp))
+        RoverNavigator()
     }
 }
