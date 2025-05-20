@@ -1,7 +1,23 @@
 <resources>
     <string name="app_name">Mars Rover Navigator</string>
+    
+    <!-- CONTENT DESCRIPTIONS -->
+    <string name="home_app_bar_data_input_content_description">Data Input</string>
+    <string name="command_palette_rotate_left_content_description">Rotate Left Command</string>
+    <string name="command_palette_rotate_right_content_description">Rotate Right Command</string>
+    <string name="command_palette_move_position_content_description">Move Position Command</string>
+    <string name="command_palette_process_commands_content_description">Process Commands</string>
+    <string name="command_palette_reset_commands_content_description">Reset Commands</string>
+    <string name="grid_cell_rover_position_content_description">Rover Position Cell</string>
+    <string name="gird_cell_empty_position_content_description">Plateau Empty Cell</string>
 
+    <!-- TEST TAGS -->
     <string name="home_app_bar_test_tag" translatable="false">HomeAppBar</string>
     <string name="home_app_bar_json_data_test_tag" translatable="false">HomeAppBarJsonData</string>
     <string name="loader_test_tag" translatable="false">LoadingItem</string>
+    <string name="command_palette_rotate_left_test_tag" translatable="false">CommandsControllerButtonRotateLeft</string>
+    <string name="command_palette_rotate_right_test_tag" translatable="false">CommandsControllerButtonRotateRight</string>
+    <string name="command_palette_move_position_test_tag" translatable="false">CommandsControllerButtonMovePosition</string>
+    <string name="command_palette_process_commands_test_tag" translatable="false">CommandsControllerButtonProcessCommands</string>
+    <string name="command_palette_reset_commands_test_tag" translatable="false">CommandsControllerButtonResetGrid</string>
 </resources>
