@@ -17,7 +17,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.rpla.marsrovernavigator.gridnavigator.RoverNavigator
+import com.rpla.marsrovernavigator.navigator.RoverNavigator
 import com.rpla.marsrovernavigator.ui.navigation.LAST_DATA_INPUT_PARAM_NAME
 import com.rpla.marsrovernavigator.ui.navigation.Routes
 import com.rpla.marsrovernavigator.ui.theme.MarsRoverNavigatorTheme
