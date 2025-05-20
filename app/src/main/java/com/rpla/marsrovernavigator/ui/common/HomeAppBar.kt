@@ -41,7 +41,7 @@ fun HomeAppBar(
             ) {
                 Icon(
                     imageVector = Icons.Filled.DataObject,
-                    contentDescription = "Filter",
+                    contentDescription = stringResource(R.string.home_app_bar_data_input_content_description),
                     tint = White,
                 )
             }
