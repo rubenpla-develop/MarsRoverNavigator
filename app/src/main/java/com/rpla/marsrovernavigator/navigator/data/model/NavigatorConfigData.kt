@@ -3,7 +3,7 @@ package com.rpla.marsrovernavigator.navigator.data.model
 data class NavigatorConfig(
     val topRightCorner: Coordinates,
     val roverPosition: Coordinates,
-    val roverNavigationDirection: NavigationDirection,
+    val roverNavigatorDirection: NavigatorDirection,
     val movements: String,
 )
 
@@ -16,5 +16,5 @@ data class NavigatorCurrentState(
     val x: Int,
     val y: Int,
     val gridSize: Int,
-    val navigationDirection: NavigationDirection,
+    val navigatorDirection: NavigatorDirection,
 )

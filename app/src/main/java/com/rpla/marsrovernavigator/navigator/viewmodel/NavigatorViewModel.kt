@@ -1,6 +1,6 @@
 package com.rpla.marsrovernavigator.navigator.viewmodel
 
-import com.rpla.marsrovernavigator.navigator.data.model.NavigationDirection
+import com.rpla.marsrovernavigator.navigator.data.model.NavigatorDirection
 import com.rpla.marsrovernavigator.navigator.data.model.NavigatorConfig
 import com.rpla.marsrovernavigator.navigator.ui.presentation.NavigatorUiState
 import com.rpla.marsrovernavigator.ui.base.BaseViewModel
@@ -41,7 +41,7 @@ class NavigatorViewModel
                     NavigatorUiState(
                         x = 3,
                         y = 4,
-                        direction = NavigationDirection.W.symbol,
+                        direction = NavigatorDirection.W.symbol,
                     ),
                 ),
             )
@@ -53,7 +53,7 @@ class NavigatorViewModel
                     NavigatorUiState(
                         x = 3,
                         y = 4,
-                        direction = NavigationDirection.W.symbol,
+                        direction = NavigatorDirection.W.symbol,
                     ),
                 ),
             )

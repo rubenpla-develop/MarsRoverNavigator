@@ -11,7 +11,7 @@ import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.rpla.marsrovernavigator.navigator.data.model.NavigationDirection
+import com.rpla.marsrovernavigator.navigator.data.model.NavigatorDirection
 import com.rpla.marsrovernavigator.navigator.data.model.NavigatorCurrentState
 import com.rpla.marsrovernavigator.navigator.viewmodel.NavigatorIntent
 import com.rpla.marsrovernavigator.navigator.viewmodel.NavigatorState
@@ -27,7 +27,7 @@ fun NavigatorUI(
     var roverPosition = rememberUpdatedState(Pair(2, 1))
 
     // Default orientation
-    var orientation = rememberUpdatedState(NavigationDirection.N)
+    var orientation = rememberUpdatedState(NavigatorDirection.N)
 
     // Default Grid Size
     val gridSize = rememberUpdatedState(5)
@@ -49,7 +49,7 @@ fun NavigatorUI(
                         x = roverPosition.value.first,
                         y = roverPosition.value.second,
                         gridSize = gridSize.value,
-                        navigationDirection = orientation.value,
+                        navigatorDirection = orientation.value,
                     ),
                 viewModel = viewModel,
             )
@@ -80,7 +80,7 @@ fun NavigatorUI(
 
             orientation =
                 rememberUpdatedState(
-                    NavigationDirection.valueOf(
+                    NavigatorDirection.valueOf(
                         (uiState.value as NavigatorState.UpdateRoverPosition)
                             .roverPosition.direction,
                     ),
@@ -95,7 +95,7 @@ fun NavigatorUI(
                         x = roverPosition.value.first,
                         y = roverPosition.value.second,
                         gridSize = gridSize.value,
-                        navigationDirection = orientation.value,
+                        navigatorDirection = orientation.value,
                     ),
                 viewModel = viewModel,
             )

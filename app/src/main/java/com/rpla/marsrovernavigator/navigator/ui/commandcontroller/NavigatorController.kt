@@ -34,7 +34,7 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.rpla.marsrovernavigator.R
 import com.rpla.marsrovernavigator.navigator.data.model.Coordinates
-import com.rpla.marsrovernavigator.navigator.data.model.NavigationDirection
+import com.rpla.marsrovernavigator.navigator.data.model.NavigatorDirection
 import com.rpla.marsrovernavigator.navigator.data.model.NavigatorConfig
 import com.rpla.marsrovernavigator.navigator.data.model.NavigatorCurrentState
 import com.rpla.marsrovernavigator.navigator.viewmodel.NavigatorIntent
@@ -124,7 +124,7 @@ fun NavigatorController(
                             NavigatorConfig(
                                 topRightCorner = Coordinates(currentState.gridSize, currentState.gridSize),
                                 roverPosition = Coordinates(currentState.x, currentState.y),
-                                roverNavigationDirection = currentState.navigationDirection,
+                                roverNavigatorDirection = currentState.navigatorDirection,
                                 commands,
                             )
                         viewModel.dispatchIntent(NavigatorIntent.ProcessCommands(coordinatesData = dataConfig))
@@ -173,7 +173,7 @@ fun CommandControllerPreview() {
                 x = 1,
                 y = 2,
                 gridSize = 5,
-                navigationDirection = NavigationDirection.W,
+                navigatorDirection = NavigatorDirection.W,
             ),
         )
     }
