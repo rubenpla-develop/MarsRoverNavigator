@@ -11,8 +11,8 @@ import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.rpla.marsrovernavigator.navigator.data.model.NavigatorDirection
 import com.rpla.marsrovernavigator.navigator.data.model.NavigatorCurrentState
+import com.rpla.marsrovernavigator.navigator.data.model.NavigatorDirection
 import com.rpla.marsrovernavigator.navigator.viewmodel.NavigatorIntent
 import com.rpla.marsrovernavigator.navigator.viewmodel.NavigatorState
 import com.rpla.marsrovernavigator.navigator.viewmodel.NavigatorViewModel

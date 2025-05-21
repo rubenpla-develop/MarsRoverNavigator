@@ -34,9 +34,9 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.rpla.marsrovernavigator.R
 import com.rpla.marsrovernavigator.navigator.data.model.Coordinates
-import com.rpla.marsrovernavigator.navigator.data.model.NavigatorDirection
 import com.rpla.marsrovernavigator.navigator.data.model.NavigatorConfig
 import com.rpla.marsrovernavigator.navigator.data.model.NavigatorCurrentState
+import com.rpla.marsrovernavigator.navigator.data.model.NavigatorDirection
 import com.rpla.marsrovernavigator.navigator.viewmodel.NavigatorIntent
 import com.rpla.marsrovernavigator.navigator.viewmodel.NavigatorViewModel
 import com.rpla.marsrovernavigator.ui.theme.MarsRoverNavigatorTheme
@@ -77,7 +77,6 @@ fun NavigatorController(
                 IconButton(
                     onClick = {
                         commands += "L"
-                        Log.i("Commands", "Commands: $commands")
                     },
                     modifier =
                         Modifier
@@ -93,7 +92,6 @@ fun NavigatorController(
                 IconButton(
                     onClick = {
                         commands += "R"
-                        Log.i("Commands", "Commands: $commands")
                     },
                     modifier = Modifier.testTag(stringResource(R.string.command_palette_rotate_left_test_tag)),
                 ) {
@@ -107,7 +105,6 @@ fun NavigatorController(
                 IconButton(
                     onClick = {
                         commands += "M"
-                        Log.i("Commands", "Commands: $commands")
                     },
                     modifier = Modifier.testTag(stringResource(R.string.command_palette_move_position_test_tag)),
                 ) {
