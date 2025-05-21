@@ -61,9 +61,10 @@ fun NavigatorController(
             color = Color.Blue,
             fontSize = 36.sp,
             modifier =
-                modifier
+                Modifier
                     .background(Color.Transparent)
-                    .fillMaxWidth(),
+                    .fillMaxWidth()
+                    .testTag(stringResource(R.string.command_palette_commands_text_box_test_tag)),
         )
 
         Row(
