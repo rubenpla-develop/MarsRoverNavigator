@@ -8,7 +8,7 @@ plugins {
 }
 
 ktlint {
-    version.set("1.2.1") // usa la versión que prefieras
+    version.set("1.2.1")
     android.set(true)
     outputColorName.set("RED")
     ignoreFailures.set(false)
@@ -64,12 +64,12 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
 
     buildFeatures {
@@ -96,6 +96,7 @@ dependencies {
     implementation(libs.coroutines.core) // Corrutinas estándar
     implementation(libs.coroutines.android) // Soporte para Android
     implementation(libs.hilt.android) // Core de Hilt
+    implementation(libs.hilt.navigation.compose) // Integración con Jetpack Compose
     implementation(libs.androidx.annotation) // Para soporte de anotaciones
     implementation(libs.androidx.ui.test.android) // Soporte KTX (incluye MasterKey)
     kapt(libs.hilt.compiler)
