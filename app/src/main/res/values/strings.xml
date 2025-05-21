@@ -15,6 +15,9 @@
     <string name="home_app_bar_test_tag" translatable="false">HomeAppBar</string>
     <string name="home_app_bar_json_data_test_tag" translatable="false">HomeAppBarJsonData</string>
     <string name="loader_test_tag" translatable="false">LoadingItem</string>
+    <string name="navigator_grid_test_tag" translatable="false">NavigatorGrid</string>
+    <string name="navigator_command_palette_test_tag" translatable="false">CommandPalette</string>
+    <string name="command_palette_commands_text_box_test_tag" translatable="false">CommandPaletteTextBox</string>
     <string name="command_palette_rotate_left_test_tag" translatable="false">CommandsControllerButtonRotateLeft</string>
     <string name="command_palette_rotate_right_test_tag" translatable="false">CommandsControllerButtonRotateRight</string>
     <string name="command_palette_move_position_test_tag" translatable="false">CommandsControllerButtonMovePosition</string>

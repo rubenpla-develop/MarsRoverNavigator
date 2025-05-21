@@ -25,6 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
@@ -60,7 +61,8 @@ fun NavigatorComponents(
                         top.linkTo(parent.top)
                         start.linkTo(parent.start)
                         end.linkTo(parent.end)
-                    },
+                    }
+                    .testTag(stringResource(R.string.navigator_grid_test_tag)),
         ) {
             items(totalCells) { index ->
                 val x = index % currentGridState.gridSize
@@ -119,7 +121,7 @@ fun NavigatorComponents(
                         bottom.linkTo(parent.bottom)
                         start.linkTo(parent.start)
                         end.linkTo(parent.end)
-                    },
+                    }.testTag(stringResource(R.string.navigator_command_palette_test_tag)),
             currentState = currentGridState,
             viewModel = viewModel,
         )
