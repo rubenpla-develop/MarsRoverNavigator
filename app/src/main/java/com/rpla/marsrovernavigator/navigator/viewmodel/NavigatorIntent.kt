@@ -9,5 +9,5 @@ sealed class NavigatorIntent : ViewIntent {
 
     data class ProcessCommands(val coordinatesData: NavigatorConfig) : NavigatorIntent()
 
-    data class UpdateRoverPosition(val newPosition: NavigatorUiState) : NavigatorIntent()
+    data class UpdateRoverPosition(val uiState: NavigatorUiState) : NavigatorIntent()
 }
