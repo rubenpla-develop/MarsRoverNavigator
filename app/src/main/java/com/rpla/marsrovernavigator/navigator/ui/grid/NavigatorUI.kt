@@ -74,7 +74,7 @@ fun NavigatorUI(
                                 .roverPosition.x,
                         second =
                             (uiState.value as NavigatorState.UpdateRoverPosition)
-                                .roverPosition.x,
+                                .roverPosition.y,
                     ),
                 )
 

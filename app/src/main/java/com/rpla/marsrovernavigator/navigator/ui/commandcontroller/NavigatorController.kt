@@ -117,15 +117,17 @@ fun NavigatorController(
 
                 IconButton(
                     onClick = {
-                        val dataConfig =
-                            NavigatorConfig(
-                                topRightCorner = Coordinates(currentState.gridSize, currentState.gridSize),
-                                roverPosition = Coordinates(currentState.x, currentState.y),
-                                roverNavigatorDirection = currentState.navigatorDirection,
-                                commands,
-                            )
-                        viewModel.dispatchIntent(NavigatorIntent.ProcessCommands(coordinatesData = dataConfig))
-                        Log.i("Commands", "Commands: $commands")
+                        if (commands.isNotEmpty()) {
+                            val dataConfig =
+                                NavigatorConfig(
+                                    topRightCorner = Coordinates(currentState.gridSize, currentState.gridSize),
+                                    roverPosition = Coordinates(currentState.x, currentState.y),
+                                    roverNavigatorDirection = currentState.navigatorDirection,
+                                    commands,
+                                )
+                            viewModel.dispatchIntent(NavigatorIntent.ProcessCommands(coordinatesData = dataConfig))
+                            Log.i("Commands", "Commands: $commands")
+                        }
                     },
                     modifier = Modifier.testTag(stringResource(R.string.command_palette_process_commands_test_tag)),
                 ) {
